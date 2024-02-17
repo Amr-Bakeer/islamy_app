@@ -12,8 +12,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
 
   cupertino_icons: ^1.0.2
+  animated_custom_dropdown: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -25,6 +30,7 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/images/

@@ -43,5 +43,27 @@ class ApplicationThemeManager {
           color: Colors.white,
         ),
         unselectedItemColor: Colors.white,
+      ),
+      textTheme: const TextTheme(
+        titleLarge: TextStyle(
+          fontFamily: "El Messiri",
+          fontWeight: FontWeight.w600,
+          fontSize: 30,
+        ),
+        bodyLarge: TextStyle(
+          fontFamily: "El Messiri",
+          fontWeight: FontWeight.w500,
+          fontSize: 25,
+        ),
+        bodyMedium: TextStyle(
+          fontFamily: "El Messiri",
+          fontWeight: FontWeight.normal,
+          fontSize: 25,
+        ),
+        bodySmall: TextStyle(
+          fontFamily: "El Messiri",
+          fontWeight: FontWeight.normal,
+          fontSize: 20,
+        ),
       ));
 }

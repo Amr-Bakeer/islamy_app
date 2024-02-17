@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamy_app/modules/hadeth/page/hadeth_view.dart';
 import 'package:islamy_app/modules/quran/page/quran_view.dart';
 import 'package:islamy_app/modules/radio/page/radio_view.dart';
@@ -21,11 +22,13 @@ class _LayoutViewState extends State<LayoutView> {
     const HadethView(),
     const TasbehView(),
     const RadioView(),
-    const SettingsView(),
+    SettingsView(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    var lang = AppLocalizations.of(context)!;
+
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -37,7 +40,7 @@ class _LayoutViewState extends State<LayoutView> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("إسلامي"),
+          title: Text(lang.islamy),
         ),
         body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -47,26 +50,26 @@ class _LayoutViewState extends State<LayoutView> {
               currentIndex = index;
             });
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/quran_icn.png")),
-              label: "القرآن",
+              icon: const ImageIcon(AssetImage("assets/images/quran_icn.png")),
+              label: lang.quran,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/hadeth_icn.png")),
-              label: "الأحاديث",
+              icon: const ImageIcon(AssetImage("assets/images/hadeth_icn.png")),
+              label: lang.hadeth,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/sebha_icn.png")),
-              label: "التسبيح",
+              icon: const ImageIcon(AssetImage("assets/images/sebha_icn.png")),
+              label: lang.tasbeh,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/radio_icn.png")),
-              label: "الراديو",
+              icon: const ImageIcon(AssetImage("assets/images/radio_icn.png")),
+              label: lang.radio,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined),
-              label: "الإعدادات",
+              icon: const Icon(Icons.settings_outlined),
+              label: lang.settings,
             ),
           ],
         ),
