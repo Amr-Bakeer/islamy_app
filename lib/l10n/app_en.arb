@@ -4,5 +4,11 @@
   "hadeth": "Hadeth",
   "tasbeh": "Tasbeh",
   "radio": "Radio",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme Mode",
+  "arabic": "العربية",
+  "english": "English",
+  "light": "Light",
+  "dark": "Dark"
 }

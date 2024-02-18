@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy_app/modules/quran/page/quran_view.dart';
+import 'package:provider/provider.dart';
+
+import '../../../config/settings_provider.dart';
 
 class QuranDetails extends StatefulWidget {
   static const String routeName = "quran_details";
@@ -19,14 +22,14 @@ class _QuranDetailsState extends State<QuranDetails> {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetail;
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
+    var vm = Provider.of<SettingsProvider>(context);
 
     if (versesList.isEmpty) loadData(args.suraNumber);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_background.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage(vm.getBackground()), fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("إسلامي"),
