@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_app/modules/hadeth/page/hadeth_view.dart';
+import 'package:provider/provider.dart';
+
+import '../../../config/settings_provider.dart';
 
 class HadethDetailsView extends StatelessWidget {
   static const String routeName = "hadethDetails";
@@ -11,12 +14,12 @@ class HadethDetailsView extends StatelessWidget {
     var args = ModalRoute.of(context)?.settings.arguments as HadethData;
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
+    var vm = Provider.of<SettingsProvider>(context);
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/main_background.png"),
-              fit: BoxFit.cover)),
+              image: AssetImage(vm.getBackground()), fit: BoxFit.cover)),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("إسلامي"),
